@@ -10,23 +10,13 @@
     <div class="content">
         <div class="container">
           <div class="row justify-content-center">
-            <!-- <div class="col-md-6 order-md-2">
-              <img src="images/undraw_file_sync_ot38.svg" alt="Image" class="img-fluid">
-            </div> -->
-            <div class="col-md-6 contents">
-              <div class="row justify-content-center">
-                <div class="col-md-12">
-                  <div class="form-block">
-                      <div class="mb-4">
-                    </div>
-    
-                  <span class="mb-0 text-muted">
-                    {% if msg %}
-                        {{ msg | safe }}
-                    {% else %}
-                        Login page
-                    {% endif %}
-                  </span>
+            {% if messages %}  
+            <ul>   
+                {% for message in messages %}  
+                   <h2> <li>{{ message }}</li>  </h2>
+                    {% endfor %}  
+            </ul>   
+            {% endif %}  
                   <center>
                     <form  method="post">
                         {% csrf_token %}
